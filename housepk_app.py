@@ -26,3 +26,13 @@ def login():
         "message": f"User {username} logged in successfully",
         "status": "success"
     })
+@app.route('/dashboard')
+def dashboard():
+    print("Dashboard accessed by user")
+    return jsonify({
+        "message": "Welcome to Dashboard",
+        "data": {
+            "total_properties": 150,
+            "new_listings": 12
+        }
+    })
